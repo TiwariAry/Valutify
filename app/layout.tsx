@@ -18,6 +18,7 @@ export const metadata: Metadata = {
 };
 
 // To create a group routing, folder name -> (<folderName>)
+// This files is used to provide various details about the data. This is necessary every time you create a new layout/branch
 
 export default function RootLayout({
                                        children,
