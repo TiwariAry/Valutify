@@ -2,20 +2,22 @@
 
 import React from 'react'
 import HeaderBox from "@/components/HeaderBox";
-import TotalBalanceBox from "@/components/TotalBalanceBox";
 import RightSidebar from "@/components/RightSidebar";
+import TotalBalanceBox from "@/components/TotalBalanceBox";
+import {getLoggedInUser} from "@/lib/actions/user.actions";
 
-const Home = () => {
-    const loggedIn = {firstName: 'Aryan', lastName: 'Tiwari', email: 'aryantiwari122004@gmail.com'}
+const Home = async () => {
+    const loggedIn = await getLoggedInUser()
+    console.log("Home => ", loggedIn);
 
     return (
         <section className={"home"}>
             <div className={"home-content"}>
                 <header className={"home-header"}>
                     <HeaderBox
-                        type={"Greeting"}
+                        type={"greeting"}
                         title={"Welcome"}
-                        user={loggedIn?.firstname || 'Guest'}
+                        user={loggedIn?.name || 'Guest'}
                         subtext={"Access and manage your account and transactions efficiently"}
                     />
 

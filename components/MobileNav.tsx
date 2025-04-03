@@ -14,6 +14,7 @@ import Link from "next/link";
 import {sidebarLinks} from "@/constants";
 import {cn} from "@/lib/utils";
 import {usePathname} from "next/navigation";
+import Footer from "@/components/Footer";
 
 
 const MobileNav = ({user}: MobileNavProps) => {
@@ -41,10 +42,10 @@ const MobileNav = ({user}: MobileNavProps) => {
                             src={"/icons/logo.png"}
                             width={34}
                             height={34}
-                            alt={"Horizon logo"}
+                            alt={"Valutify logo"}
                         />
                         <h1 className={"text-26 font-ibm-plex-serif font-bold text-black-1"}>
-                            Horizon
+                            Valutify
                         </h1>
                     </Link>
 
@@ -82,7 +83,9 @@ const MobileNav = ({user}: MobileNavProps) => {
                             USER
                             </nav>
                         </SheetClose>
-                    FOOTER
+
+                        <Footer user={user} type={"mobile"}>
+                        </Footer>
                     </div>
                 </SheetContent>
             </Sheet>
